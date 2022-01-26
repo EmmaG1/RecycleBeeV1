@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "561923354031",
+    "project_id": "recyclebeev1",
+    "storage_bucket": "recyclebeev1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:561923354031:android:20983d81cbbb80e81c935a",
+        "android_client_info": {
+          "package_name": "org.wit.recyclebeev1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "561923354031-a7529h64biqkg9p20p0csv207s0653jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTOT_0dEGJOvM51wZdy65pLva74etqlRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "561923354031-a7529h64biqkg9p20p0csv207s0653jv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
