@@ -56,6 +56,11 @@ public class MainActivity : AppCompatActivity() {
             //validate data
             validateData()
         }
+
+        //click SignIn Textview to bring you to login page
+        binding.tvSignIn.setOnClickListener {
+            startActivity(Intent(this, LoginMainActivity::class.java))
+        }
     }
 
     private fun validateData() {

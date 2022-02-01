@@ -39,13 +39,13 @@
         android:id="@+id/noAccountTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Not registered? Sign up here"
+        android:text="@string/no_account"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.817"
-        tools:ignore="MissingConstraints" />
+         />
 
     <Button
         android:id="@+id/loginBtn"
@@ -58,6 +58,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.527"
-        tools:ignore="MissingConstraints" />
+         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

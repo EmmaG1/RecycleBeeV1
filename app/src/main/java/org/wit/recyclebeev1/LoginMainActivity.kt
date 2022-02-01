@@ -49,7 +49,7 @@ class LoginMainActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
-        //handle click open register activity (mainActivity)
+        //handle click open register activity (mainActivity) (when you click 'no registered? sign up here" it takes you to mainactivity (registerPage)
         binding.noAccountTv.setOnClickListener {
             startActivity(Intent(this, MainActivity::class.java))
         }
