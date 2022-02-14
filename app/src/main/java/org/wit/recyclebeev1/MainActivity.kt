@@ -53,7 +53,7 @@ public class MainActivity : AppCompatActivity() {
 //--------------------
         //config actionbar, enable back button
         actionBar = supportActionBar!!
-        actionBar.title = "Sign up"
+        actionBar.title = "Register"
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowHomeEnabled(true)
 
@@ -71,7 +71,7 @@ public class MainActivity : AppCompatActivity() {
         binding.signUpBtn.setOnClickListener {
             //validate data
             validateData()
-            getAName()
+            pushToDb()
         }
 
         //click SignIn Textview to bring you to login page
@@ -143,7 +143,7 @@ public class MainActivity : AppCompatActivity() {
 
     }
 
-    fun getAName() {
+    fun pushToDb() {
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
 
         // database = FirebaseDatabase.getInstance().getReference("Users") //new
