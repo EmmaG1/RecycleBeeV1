@@ -9,6 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import org.wit.recyclebeev1.databinding.ActivityHomeBinding
 import org.wit.recyclebeev1.fragments.HomeFragment
 import org.wit.recyclebeev1.fragments.MapFragment
+import org.wit.recyclebeev1.fragments.MapsFragment
 import org.wit.recyclebeev1.fragments.UserFragment
 
 class HomeActivity : AppCompatActivity() {
@@ -43,7 +44,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         val homeFragment = HomeFragment()
-        val mapFragment = MapFragment()
+        val mapsFragment = MapsFragment() //changed
         val userFragment = UserFragment()
 
         makeCurrentFragment(homeFragment)
@@ -53,7 +54,8 @@ class HomeActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
            when(it.itemId) {
                R.id.ic_home -> makeCurrentFragment(homeFragment)
-               R.id.ic_map -> makeCurrentFragment(mapFragment)
+              // R.id.ic_map -> makeCurrentFragment(mapFragment)
+               R.id.ic_map -> makeCurrentFragment(mapsFragment) //changed
                R.id.ic_user -> makeCurrentFragment(userFragment)
            }
             true

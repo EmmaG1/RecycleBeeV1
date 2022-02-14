@@ -67,11 +67,13 @@ public class MainActivity : AppCompatActivity() {
         //firebase auth init
         firebaseAuth = FirebaseAuth.getInstance()
 
-        //handle click begin signin
+        //handle click begin signin (this should bring to homepage)
         binding.signUpBtn.setOnClickListener {
             //validate data
             validateData()
             pushToDb()
+            //startActivity(Intent(this, HomeActivity::class.java))
+
         }
 
         //click SignIn Textview to bring you to login page
