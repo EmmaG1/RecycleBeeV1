@@ -2,4 +2,6 @@
     <string name="app_name">RecycleBeeV1</string>
     <string name="no_account">Not registered? Sign up <b>here</b></string>
     <string name="sign_in">Already have an account? <b>Sign in</b></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

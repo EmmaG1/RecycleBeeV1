@@ -4,8 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.app.ActionBar
+import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
 import org.wit.recyclebeev1.databinding.ActivityHomeBinding
+import org.wit.recyclebeev1.fragments.HomeFragment
+import org.wit.recyclebeev1.fragments.MapFragment
+import org.wit.recyclebeev1.fragments.UserFragment
 
 class HomeActivity : AppCompatActivity() {
 
@@ -23,6 +27,7 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         //config actionbar
         actionBar = supportActionBar!!
         actionBar.title = "Home/Profile"
@@ -36,7 +41,26 @@ class HomeActivity : AppCompatActivity() {
             firebaseAuth.signOut()
             checkUser()
         }
-    }
+
+        val homeFragment = HomeFragment()
+        val mapFragment = MapFragment()
+        val userFragment = UserFragment()
+
+        makeCurrentFragment(homeFragment)
+
+       // binding.bottom_navigation.setOnNavigationItemSelectedListener {
+       // binding.bottomNavigation.setOnNa
+        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+           when(it.itemId) {
+               R.id.ic_home -> makeCurrentFragment(homeFragment)
+               R.id.ic_map -> makeCurrentFragment(mapFragment)
+               R.id.ic_user -> makeCurrentFragment(userFragment)
+           }
+            true
+        }
+
+        }
+
 
     private fun checkUser() {
         //check user is logged in or not
@@ -53,4 +77,14 @@ class HomeActivity : AppCompatActivity() {
             finish()
         }
     }
+
+        private fun makeCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.fl_wrapper, fragment)
+            commit()
+        }
+
 }
+
+
+
