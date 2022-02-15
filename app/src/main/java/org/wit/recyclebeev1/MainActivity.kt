@@ -71,7 +71,7 @@ public class MainActivity : AppCompatActivity() {
         binding.signUpBtn.setOnClickListener {
             //validate data
             validateData()
-            pushToDb()
+            pushToDb() //this is the error
             //startActivity(Intent(this, HomeActivity::class.java))
 
         }
@@ -137,10 +137,6 @@ public class MainActivity : AppCompatActivity() {
             }
 
 
-        //attempt 1
-
-
-// -----------------------------------------------
 
 
     }
@@ -148,19 +144,18 @@ public class MainActivity : AppCompatActivity() {
     fun pushToDb() {
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
 
-        // database = FirebaseDatabase.getInstance().getReference("Users") //new
-        val user = User(username, email, password) //new
-        //database.
-        //val ref2 = database2.getReference("name")
-       // ref2.setValue(user).addOnSuccessListener { //new
-        database2.child("accounts").child(username).setValue(user).addOnSuccessListener { //new
-            binding.etEmail2.text.clear() //new
-            binding.etPassword2.text.clear() //new
+        val user = User(username, email, password)
 
-            Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show() //new
+        database2.child("accounts").child(username).setValue(user).addOnSuccessListener {
+            binding.etEmail2.text.clear()
+            binding.etPassword2.text.clear()
 
-        }.addOnFailureListener { //new
-            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show() //new
+            Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
+
+           // startActivity(Intent(this, HomeActivity::class.java))
+
+        }.addOnFailureListener {
+            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
         }
     }
 
