@@ -17,6 +17,8 @@ import org.wit.recyclebeev1.R
 
 class MapsFragment : Fragment() {
 
+    //private lateinit var lastLocation: Location
+
     private val callback = OnMapReadyCallback { googleMap ->
         /**
          * Manipulates the map once available.
@@ -27,6 +29,7 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
+
         val sydney = LatLng(-34.0, 151.0)
         val canberra = LatLng(-20.0,140.0)
         googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))

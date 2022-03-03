@@ -45,5 +45,10 @@ class LaunchActivity : AppCompatActivity() {
             startActivity(Intent(this, BusRegister::class.java))
 
         }
+
+        binding.mapBtn.setOnClickListener {
+            startActivity(Intent(this, MapsActivity::class.java))
+
+        }
     }
 }
