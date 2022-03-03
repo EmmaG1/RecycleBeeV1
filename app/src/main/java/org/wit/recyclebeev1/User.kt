@@ -1,9 +1,11 @@
 package org.wit.recyclebeev1
 
 data class User(
-    val username: String? =null, //new
+    val username: String? =null,
     val email : String? = null,
-    val password : String?= null
+    val password : String?= null,
+    val busName : String? = null, //new
+    val busAddress : String? = null //new
 
     )
 //

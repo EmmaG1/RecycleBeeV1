@@ -98,6 +98,8 @@ class LoginMainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Logged in as $email", Toast.LENGTH_SHORT).show()
 
                 //open homepage
+                //could i put an if statement here, if bus: show bus user homepage, if user show homepage
+                //or use two login screens and point to 2 different homepages?
                 startActivity(Intent(this,HomeActivity::class.java))
                 finish()
 

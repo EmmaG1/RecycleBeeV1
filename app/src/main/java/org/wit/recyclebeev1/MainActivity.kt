@@ -38,7 +38,7 @@ public class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//------------
+//-------------------
 
        // val ref2 = datbase2.getReference("messages")
       //  ref2.setValue("hello")
@@ -50,7 +50,9 @@ public class MainActivity : AppCompatActivity() {
 //        }
 
        // database.setValue(User(email,password))
+
 //--------------------
+
         //config actionbar, enable back button
         actionBar = supportActionBar!!
         actionBar.title = "Register"
@@ -72,7 +74,7 @@ public class MainActivity : AppCompatActivity() {
             //validate data
             validateData()
             pushToDb() //this is the error
-            //startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
 
         }
 
@@ -104,10 +106,10 @@ public class MainActivity : AppCompatActivity() {
         } else {
             //data is valid, continue signup
             firebaseSignUp()
-
         }
     }
 
+    //probably from here i should do pushtodb
     private fun firebaseSignUp() {
         //show progress
         progressDialog.show()
@@ -135,28 +137,26 @@ public class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Signup failed due to ${e.message}", Toast.LENGTH_SHORT).show()
 
             }
-
-
-
-
     }
 
+    //probbly should have the screen from here
     fun pushToDb() {
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
 
         val user = User(username, email, password)
+        database2.child("accounts").child(username).setValue(user) //new
 
-        database2.child("accounts").child(username).setValue(user).addOnSuccessListener {
-            binding.etEmail2.text.clear()
-            binding.etPassword2.text.clear()
+       // database2.child("accounts").child(username).setValue(user).addOnSuccessListener {
+            //binding.etEmail2.text.clear()
+          //  binding.etPassword2.text.clear()
 
-            Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
+           // Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
 
            // startActivity(Intent(this, HomeActivity::class.java))
 
-        }.addOnFailureListener {
-            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-        }
+       // }.addOnFailureListener {
+       //     Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
+      //  }
     }
 
         override fun onSupportNavigateUp(): Boolean {

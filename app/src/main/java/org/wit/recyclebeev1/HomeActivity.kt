@@ -49,8 +49,6 @@ class HomeActivity : AppCompatActivity() {
 
         makeCurrentFragment(homeFragment)
 
-       // binding.bottom_navigation.setOnNavigationItemSelectedListener {
-       // binding.bottomNavigation.setOnNa
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
            when(it.itemId) {
                R.id.ic_home -> makeCurrentFragment(homeFragment)
@@ -74,7 +72,7 @@ class HomeActivity : AppCompatActivity() {
             binding.emailTV.text = email
         }
         else {
-            //user is null user is not loggied in, go to login activity
+            //user is null user is not logged in, go to login activity
             startActivity(Intent(this, LoginMainActivity::class.java))
             finish()
         }
