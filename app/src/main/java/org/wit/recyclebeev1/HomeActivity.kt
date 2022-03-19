@@ -3,8 +3,12 @@ package org.wit.recyclebeev1
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import org.wit.recyclebeev1.databinding.ActivityHomeBinding
 import org.wit.recyclebeev1.fragments.HomeFragment
@@ -13,6 +17,8 @@ import org.wit.recyclebeev1.fragments.MapsFragment
 import org.wit.recyclebeev1.fragments.UserFragment
 
 class HomeActivity : AppCompatActivity() {
+
+    //lateinit var toggle:ActionBarDrawerToggle //side nav bar
 
     //viewBinding
     private lateinit var binding: ActivityHomeBinding
@@ -28,6 +34,26 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //------side nav start ----------
+//        val drawerLayout : DrawerLayout = findViewById(R.id.drawerLayout) //side nav
+//        val navView : NavigationView = findViewById(R.id.nav_view) //side nav
+//
+//        toggle = ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close) //side nav
+//        drawerLayout.addDrawerListener(toggle)
+//        toggle.syncState()
+//
+//        supportActionBar?.setDisplayShowHomeEnabled(true)
+//
+//        navView.setNavigationItemSelectedListener {
+//            when(it.itemId){
+//                R.id.ic_home -> Toast.makeText(applicationContext, "Clicked home", Toast.LENGTH_SHORT).show()
+//                R.id.ic_map -> Toast.makeText(applicationContext, "Clicked map", Toast.LENGTH_SHORT).show()
+//                R.id.ic_user -> Toast.makeText(applicationContext, "Clicked user", Toast.LENGTH_SHORT).show()
+//
+//            }
+//            true
+//        }
+        //--side nav end ------- (also nav_menu slightly changed (toold part) and homepage layout changed (see notes)
 
         //config actionbar
         actionBar = supportActionBar!!
@@ -38,6 +64,7 @@ class HomeActivity : AppCompatActivity() {
         checkUser()
 
         //handle click, logout
+        //UNCOMMENT THUIS FOR OLD NAV
         binding.logoutBtn.setOnClickListener {
             firebaseAuth.signOut()
             checkUser()
@@ -46,17 +73,35 @@ class HomeActivity : AppCompatActivity() {
         val homeFragment = HomeFragment()
         val mapsFragment = MapsFragment() //changed
         val userFragment = UserFragment()
+        val newmap = MapsActivity()
 
-        makeCurrentFragment(homeFragment)
+        //makeCurrentFragment(homeFragment)
 
-        binding.bottomNavigation.setOnNavigationItemSelectedListener {
-           when(it.itemId) {
-               R.id.ic_home -> makeCurrentFragment(homeFragment)
-              // R.id.ic_map -> makeCurrentFragment(mapFragment)
-               R.id.ic_map -> makeCurrentFragment(mapsFragment) //changed
-               R.id.ic_user -> makeCurrentFragment(userFragment)
-           }
-            true
+        //UNCOMMENT THUIS FOR OLD NAV
+//        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+//           when(it.itemId) {
+//               R.id.ic_home -> makeCurrentFragment(homeFragment)
+//              // R.id.ic_map -> makeCurrentFragment(mapFragment)
+//              // R.id.ic_map -> makeCurrentFragment(mapsFragment) //changed
+//               R.id.ic_map -> (MapsActivity)
+//               R.id.ic_user -> makeCurrentFragment(userFragment)
+//           }
+//            true
+//        }
+
+        binding.mapBtn.setOnClickListener {
+            startActivity(Intent(this, MapsActivity::class.java))
+
+        }
+
+        binding.storeListInputBtn.setOnClickListener {
+            startActivity(Intent(this, StoreListInput::class.java))
+
+        }
+
+        binding.storeListBtn.setOnClickListener {
+            startActivity(Intent(this, ReadStoreData::class.java))
+
         }
 
         }
@@ -78,11 +123,11 @@ class HomeActivity : AppCompatActivity() {
         }
     }
 
-        private fun makeCurrentFragment(fragment: Fragment) =
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.fl_wrapper, fragment)
-            commit()
-        }
+//        private fun makeCurrentFragment(fragment: Fragment) =
+//        supportFragmentManager.beginTransaction().apply {
+//            replace(R.id.fl_wrapper, fragment)
+//            commit()
+//        }
 
 }
 

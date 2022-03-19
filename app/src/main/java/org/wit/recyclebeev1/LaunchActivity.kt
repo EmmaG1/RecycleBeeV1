@@ -46,9 +46,9 @@ class LaunchActivity : AppCompatActivity() {
 
         }
 
-        binding.mapBtn.setOnClickListener {
-            startActivity(Intent(this, MapsActivity::class.java))
-
-        }
+//        binding.mapBtn.setOnClickListener {
+//            startActivity(Intent(this, MapsActivity::class.java))
+//
+//        }
     }
 }

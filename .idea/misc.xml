@@ -5,15 +5,18 @@
       <map>
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_bus_register.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_login_main.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.11979166666666667" />
+        <entry key="app/src/main/res/layout/activity_read_store_data.xml" value="0.16802536231884058" />
+        <entry key="app/src/main/res/layout/activity_store_list_input.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1308876811594203" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.1308876811594203" />
         <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_user.xml" value="0.1308876811594203" />
+        <entry key="app/src/main/res/layout/nav_header.xml" value="0.10520833333333333" />
         <entry key="app/src/main/res/menu/nav_menu.xml" value="0.1921875" />
       </map>
     </option>
