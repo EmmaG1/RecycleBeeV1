@@ -57,8 +57,6 @@ class StoreListInput : AppCompatActivity() {
 
         }
 
-
-
     }
 
     private fun validateData2() {
@@ -66,8 +64,6 @@ class StoreListInput : AppCompatActivity() {
         storeEmail = binding.etStoreEmail.text.toString().trim()
         storeName = binding.etStoreName.text.toString().trim()
         storeAddress = binding.etStoreAdd.text.toString().trim()
-
-
 
         //validate data
         if (!Patterns.EMAIL_ADDRESS.matcher(storeEmail).matches()) {
@@ -80,40 +76,9 @@ class StoreListInput : AppCompatActivity() {
             //address isnt entered
             binding.etStoreAdd.error = "Please enter address"
         } else {
-            //data is valid, continue signup
-            //firebaseSignUp()
-            //pushToDB2()
+
         }
     }
-
-//    private fun firebaseSignUp() {
-//        //show progress
-//        progressDialog.show()
-//
-//        //create account
-//        firebaseAuth.createUserWithEmailAndPassword(email, password)
-//            .addOnSuccessListener {
-//                //signup success
-//                progressDialog.dismiss()
-//                var database = FirebaseDatabase.getInstance().reference //new
-//                //get current user
-//                val firebaseUser = firebaseAuth.currentUser
-//                val email = firebaseUser!!.email
-//                Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
-//
-//                //open profile
-//                startActivity(Intent(this, HomeActivity::class.java))
-//                database.setValue(User(username, email,password)) //new
-//                finish()
-//
-//            }
-//            .addOnFailureListener { e ->
-//                //signup failed
-//                progressDialog.dismiss()
-//                Toast.makeText(this, "Signup failed due to ${e.message}", Toast.LENGTH_SHORT).show()
-//
-//            }
-//    }
 
     fun pushToDb2() {
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
@@ -121,17 +86,6 @@ class StoreListInput : AppCompatActivity() {
         val store = Store(storeEmail, storeName, storeAddress)
         database2.child("stores").child(storeName).setValue(store) //new
 
-        // database2.child("accounts").child(username).setValue(user).addOnSuccessListener {
-        //binding.etEmail2.text.clear()
-        //  binding.etPassword2.text.clear()
-
-        // Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
-
-        // startActivity(Intent(this, HomeActivity::class.java))
-
-        // }.addOnFailureListener {
-        //     Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-        //  }
     }
 
 

@@ -59,14 +59,12 @@ class ReadStoreData : AppCompatActivity() {
 
                 Toast.makeText(this,"Store Doesn't Exist",Toast.LENGTH_SHORT).show()
 
-
             }
 
         }.addOnFailureListener{
 
             Toast.makeText(this,"Failed",Toast.LENGTH_SHORT).show()
-
-
+            
         }
     }
 }
