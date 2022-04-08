@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_account.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_bus_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.165" />
@@ -14,6 +15,7 @@
         <entry key="app/src/main/res/layout/activity_read_store_data.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/activity_store_list_input.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.24270833333333333" />
+        <entry key="app/src/main/res/layout/dialog_wait.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1308876811594203" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.1308876811594203" />
         <entry key="app/src/main/res/layout/fragment_maps.xml" value="0.1" />

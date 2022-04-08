@@ -20,7 +20,7 @@
 
 
     <Button
-        android:id="@+id/userAccount"
+        android:id="@+id/userAccountBtn"
         android:layout_width="391dp"
         android:layout_height="89dp"
         android:text="Account"

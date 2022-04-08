@@ -112,6 +112,11 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, ReadStoreData::class.java))
 
         }
+
+        binding.userAccountBtn.setOnClickListener {
+            startActivity(Intent(this, AccountActivity::class.java))
+
+        }
 //-------------------------------end of button menu
     }
 
