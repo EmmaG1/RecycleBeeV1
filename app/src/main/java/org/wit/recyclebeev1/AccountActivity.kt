@@ -36,6 +36,7 @@ class AccountActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = FirebaseAuth.getInstance()
         val uid = auth.currentUser?.uid
+      //  setContentView(R.layout.activity_account)
         databaseReference = FirebaseDatabase.getInstance().getReference("accounts")
         binding.saveBtn.setOnClickListener {
 
@@ -58,12 +59,12 @@ class AccountActivity : AppCompatActivity() {
                     }
                     else {
                         hideProgressBar()
-                        Toast.makeText(this@AccountActivity, "Failed to upfate profile", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this@AccountActivity, "Failed to update profile", Toast.LENGTH_SHORT).show()
                     }
                 }
             }
         }
-        setContentView(R.layout.activity_account)
+
     }
 
 
