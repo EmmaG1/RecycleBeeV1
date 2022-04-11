@@ -42,7 +42,8 @@ class ReadStoreData : AppCompatActivity() {
 
         //database = FirebaseDatabase.getInstance().getReference("stores")
         database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
-        database3.child(storeName).get().addOnSuccessListener {
+        //database3.child(storeName).get().addOnSuccessListener {
+        database3.child("stores").child(storeName).get().addOnSuccessListener {
 
             if (it.exists()){
 

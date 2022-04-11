@@ -32,6 +32,7 @@ class StoreListInput : AppCompatActivity() {
     private var storeEmail = ""
     private var storeName =""
     private var storeAddress=""
+    private var storeCounty = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
