@@ -36,6 +36,7 @@ class AccountActivity : AppCompatActivity() {
         setContentView(binding.root)
         auth = FirebaseAuth.getInstance()
         val uid = auth.currentUser?.uid
+
       //  setContentView(R.layout.activity_account)
         databaseReference = FirebaseDatabase.getInstance().getReference("accounts")
         binding.saveBtn.setOnClickListener {
@@ -52,7 +53,10 @@ class AccountActivity : AppCompatActivity() {
             if (uid != null) {
 
                 //databaseReference.child(uid).setValue(account).addOnCompleteListener { //old
+                //database3.child("accounts").child(uid).Update(account).addOnCompleteListener {
+                //database3.child("accounts").child(uid).setValue(account).addOnCompleteListener { //working
                 database3.child("accounts").child(uid).setValue(account).addOnCompleteListener {
+
 
                     if (it.isSuccessful){
                         uploadProfilePic()

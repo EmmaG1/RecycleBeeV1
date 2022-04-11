@@ -30,9 +30,11 @@ public class MainActivity : AppCompatActivity() {
 
     //firebaseauth
     private lateinit var firebaseAuth: FirebaseAuth
+
     private var email = ""
     private var password = ""
     private var username = ""
+    private lateinit var uid:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,11 +71,14 @@ public class MainActivity : AppCompatActivity() {
         //firebase auth init
         firebaseAuth = FirebaseAuth.getInstance()
 
+        //UID
+
+
         //handle click begin signin (this should bring to homepage)
         binding.signUpBtn.setOnClickListener {
             //validate data
             validateData()
-            pushToDb() //this is the error
+            //pushToDb() //this is the error
             startActivity(Intent(this, HomeActivity::class.java))
 
         }
@@ -121,13 +126,16 @@ public class MainActivity : AppCompatActivity() {
                 progressDialog.dismiss()
                 var database = FirebaseDatabase.getInstance().reference //new
                 //get current user
+
                 val firebaseUser = firebaseAuth.currentUser
+
                 val email = firebaseUser!!.email
                 Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
 
+                pushToDb()
                 //open profile
                 startActivity(Intent(this, HomeActivity::class.java))
-                database.setValue(User(username, email,password)) //new
+               database.setValue(User(username, email,password))
                 finish()
 
             }
@@ -141,10 +149,14 @@ public class MainActivity : AppCompatActivity() {
 
     //probbly should have the screen from here
     fun pushToDb() {
+
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
 
+       //new
+        uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
         val user = User(username, email, password)
-        database2.child("accounts").child(username).setValue(user) //new
+        database2.child("accounts").child(uid).setValue(user)
+        //database2.child("accounts").child(uid).setValue(user) //new
 
        // database2.child("accounts").child(username).setValue(user).addOnSuccessListener {
             //binding.etEmail2.text.clear()
