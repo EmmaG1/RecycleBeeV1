@@ -34,6 +34,13 @@ public class MainActivity : AppCompatActivity() {
     private var email = ""
     private var password = ""
     private var username = ""
+
+    //new------
+    private var firstName=""
+    private var lastName = ""
+    private var eircode = ""
+    //------------
+
     private lateinit var uid:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -130,12 +137,13 @@ public class MainActivity : AppCompatActivity() {
                 val firebaseUser = firebaseAuth.currentUser
 
                 val email = firebaseUser!!.email
+
                 Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
 
                 pushToDb()
                 //open profile
                 startActivity(Intent(this, HomeActivity::class.java))
-               database.setValue(User(username, email,password))
+               database.setValue(User(username, email,password, firstName, lastName, eircode)) //new details
                 finish()
 
             }
@@ -154,7 +162,7 @@ public class MainActivity : AppCompatActivity() {
 
        //new
         uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
-        val user = User(username, email, password)
+        val user = User(username, email, password, firstName, lastName, eircode)
         database2.child("accounts").child(uid).setValue(user)
         //database2.child("accounts").child(uid).setValue(user) //new
 
