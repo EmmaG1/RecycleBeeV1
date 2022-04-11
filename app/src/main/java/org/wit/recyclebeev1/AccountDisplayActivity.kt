@@ -8,6 +8,8 @@ import android.view.Window
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import org.wit.recyclebeev1.databinding.ActivityAccountDisplayBinding
@@ -32,7 +34,9 @@ class AccountDisplayActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         uid = auth.currentUser?.uid.toString()
 
-        databaseReference= FirebaseDatabase.getInstance().getReference("accounts")
+        //databaseReference= FirebaseDatabase.getInstance().getReference("accounts")
+        val database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference //new
+        databaseReference = database3.child("accounts")
         if(uid.isNotEmpty()){
             getUserData()
         }
@@ -40,17 +44,20 @@ class AccountDisplayActivity : AppCompatActivity() {
 
     private fun getUserData() {
 
-       // showProgressBar()
+
+         showProgressBar()
+        //database3.child(uid).addValueEventListener(object: ValueEventListener{
         databaseReference.child(uid).addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 user = snapshot.getValue(User::class.java)!!
-                binding.tvFullName.setText(user.firstName + "" + user.lastName)
+                binding.tvFullName.setText(user.firstName + " " + user.lastName)
                 binding.tvEircode.setText(user.eircode)
                 getUserProfilePic()
+                //Toast.makeText(this@AccountDisplayActivity, "Successfully recieved user profile data", Toast.LENGTH_SHORT)
             }
 
             override fun onCancelled(error: DatabaseError) {
-               // hideProgressBar()
+                hideProgressBar()
                 Toast.makeText(this@AccountDisplayActivity, "Failed to get user profile data", Toast.LENGTH_SHORT)
             }
         })
