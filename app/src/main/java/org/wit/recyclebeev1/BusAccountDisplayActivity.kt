@@ -8,17 +8,22 @@ import android.os.Bundle
 import android.view.Window
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import org.wit.recyclebeev1.databinding.ActivityAccountDisplayBinding
+import org.wit.recyclebeev1.databinding.ActivityBusAccountDisplayBinding
 import java.io.File
 
-class AccountDisplayActivity : AppCompatActivity() {
+class BusAccountDisplayActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAccountDisplayBinding
+
+    private lateinit var binding: ActivityBusAccountDisplayBinding
     private lateinit var auth: FirebaseAuth
     private lateinit var databaseReference: DatabaseReference
     private lateinit var storageReference: StorageReference
@@ -29,7 +34,7 @@ class AccountDisplayActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAccountDisplayBinding.inflate(layoutInflater)
+        binding = ActivityBusAccountDisplayBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         auth = FirebaseAuth.getInstance()
@@ -37,13 +42,13 @@ class AccountDisplayActivity : AppCompatActivity() {
 
         //databaseReference= FirebaseDatabase.getInstance().getReference("accounts")
         val database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference //new
-        databaseReference = database3.child("accounts").child("Users") //added users code here
+        databaseReference = database3.child("accounts").child("BusinessUsers") //added users code here
         if(uid.isNotEmpty()){
             getUserData()
         }
 
         binding.userAccountBtn.setOnClickListener {
-            startActivity(Intent(this, AccountActivity::class.java))
+            startActivity(Intent(this, BusAccountActivity::class.java))
 
         }
 
@@ -72,26 +77,26 @@ class AccountDisplayActivity : AppCompatActivity() {
     private fun getUserData() {
 
 
-         showProgressBar()
+        showProgressBar()
         //database3.child(uid).addValueEventListener(object: ValueEventListener{
-        databaseReference.child(uid).addValueEventListener(object: ValueEventListener{
+        databaseReference.child(uid).addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 user = snapshot.getValue(User::class.java)!!
-                binding.tvFullName.setText(user.firstName + " " + user.lastName)
-                binding.tvEircode.setText(user.eircode)
+                binding.tvBusinessName.setText(user.businessName) //firstName
+                binding.tvBusinessBio.setText(user.businessBio) //eircode
                 getUserProfilePic()
                 //Toast.makeText(this@AccountDisplayActivity, "Successfully recieved user profile data", Toast.LENGTH_SHORT)
             }
 
             override fun onCancelled(error: DatabaseError) {
                 hideProgressBar()
-                Toast.makeText(this@AccountDisplayActivity, "Failed to get user profile data", Toast.LENGTH_SHORT)
+                Toast.makeText(this@BusAccountDisplayActivity, "Failed to get user profile data", Toast.LENGTH_SHORT)
             }
         })
     }
 
     private fun showProgressBar(){
-        dialog = Dialog(this@AccountDisplayActivity)
+        dialog = Dialog(this@BusAccountDisplayActivity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.dialog_wait)
         dialog.setCanceledOnTouchOutside(false)
@@ -112,7 +117,7 @@ class AccountDisplayActivity : AppCompatActivity() {
 
         }.addOnFailureListener{
             hideProgressBar()
-            Toast.makeText(this@AccountDisplayActivity, "Failed to retrieve image", Toast.LENGTH_SHORT)
+            Toast.makeText(this@BusAccountDisplayActivity, "Failed to retrieve image", Toast.LENGTH_SHORT)
         }
 
 

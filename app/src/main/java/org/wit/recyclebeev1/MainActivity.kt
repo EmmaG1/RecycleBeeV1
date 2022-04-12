@@ -39,6 +39,9 @@ public class MainActivity : AppCompatActivity() {
     private var firstName=""
     private var lastName = ""
     private var eircode = ""
+    private var businessName = ""
+    private var businessAddress = ""
+    private var businessBio = ""
 
 
     private lateinit var uid:String
@@ -135,7 +138,7 @@ public class MainActivity : AppCompatActivity() {
         }
     }
 
-    //probably from here i should do pushtodb
+
     private fun firebaseSignUp() {
         //show progress
         progressDialog.show()
@@ -219,7 +222,7 @@ public class MainActivity : AppCompatActivity() {
 
         //new
         uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
-        val user = User(username, email, password, firstName, lastName, eircode)
+        val user = User(username, email, password, businessName, businessAddress, businessBio)
         //added '.child("USers") here
         database2.child("accounts").child("BusinessUsers").child(uid).setValue(user)
 

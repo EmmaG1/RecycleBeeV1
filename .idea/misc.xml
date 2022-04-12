@@ -6,6 +6,8 @@
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_account.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_account_display.xml" value="0.12447916666666667" />
+        <entry key="app/src/main/res/layout/activity_bus_account.xml" value="0.2635416666666667" />
+        <entry key="app/src/main/res/layout/activity_bus_account_display.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_bus_home.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/activity_bus_register.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.165" />

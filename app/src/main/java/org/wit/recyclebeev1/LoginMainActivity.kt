@@ -98,8 +98,9 @@ class LoginMainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Logged in as $email", Toast.LENGTH_SHORT).show()
 
                 //open homepage
-                //could i put an if statement here, if bus: show bus user homepage, if user show homepage
-                //or use two login screens and point to 2 different homepages?
+                //could i put an if statement here, if user is in "accounts", "businessUSers" on database, show bushomepage?
+                //if currentuser in databasereference https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/accounts/BusinessUsers show busHome
+                //or use two login screens and point to 2 different homepages or checkbox (not secure)
                 startActivity(Intent(this,HomeActivity::class.java))
                 finish()
 

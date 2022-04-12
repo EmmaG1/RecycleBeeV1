@@ -7,8 +7,9 @@ data class User(
     val firstName : String?=null,
     val lastName : String?=null,
     val eircode : String? =null,
-    val busName : String? = null,
-    val busAddress : String? = null
+    val businessName : String? = null,
+    val busAddress : String? = null,
+    val businessBio : String? = null
 //boolean
 //if bus user we can go to same acitivty but theyll see different things
     )

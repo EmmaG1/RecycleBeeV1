@@ -54,7 +54,7 @@ class StoreListInput : AppCompatActivity() {
         binding.submitStoreBtn.setOnClickListener {
             validateData2()
             pushToDb2() //this is the error
-            startActivity(Intent(this, HomeActivity::class.java))
+            startActivity(Intent(this, BusHomeActivity::class.java))
 
         }
 

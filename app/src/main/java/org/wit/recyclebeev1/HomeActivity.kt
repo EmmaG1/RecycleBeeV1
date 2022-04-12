@@ -103,10 +103,10 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
-        binding.storeListInputBtn.setOnClickListener {
-            startActivity(Intent(this, StoreListInput::class.java))
-
-        }
+//        binding.storeListInputBtn.setOnClickListener {
+//            startActivity(Intent(this, StoreListInput::class.java))
+//
+//        }
 
         binding.storeListBtn.setOnClickListener {
             startActivity(Intent(this, ReadStoreData::class.java))
