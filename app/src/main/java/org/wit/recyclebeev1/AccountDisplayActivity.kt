@@ -37,7 +37,7 @@ class AccountDisplayActivity : AppCompatActivity() {
 
         //databaseReference= FirebaseDatabase.getInstance().getReference("accounts")
         val database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference //new
-        databaseReference = database3.child("accounts")
+        databaseReference = database3.child("accounts").child("Users") //added users code here
         if(uid.isNotEmpty()){
             getUserData()
         }

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
+import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import com.google.firebase.auth.FirebaseAuth
@@ -61,6 +62,11 @@ public class MainActivity : AppCompatActivity() {
 
 //--------------------
 
+
+        //Checkboxes
+        val chk = findViewById<CheckBox>(R.id.userCheckBox)
+        //val chk2 = findViewById<CheckBox>(R.id.checkBox2)
+
         //config actionbar, enable back button
         actionBar = supportActionBar!!
         actionBar.title = "Register"
@@ -80,12 +86,24 @@ public class MainActivity : AppCompatActivity() {
         //UID
 
 
-        //handle click begin signin (this should bring to homepage)
+        //handle click begin reguster (this should bring to homepage)
         binding.signUpBtn.setOnClickListener {
+
+            //checkbox code?
+            if(chk.isChecked){
+                validateData()
+                startActivity(Intent(this, HomeActivity::class.java))
+            }
+
+//            if(chk2.isChecked){
+//                validateBusData()
+//                startActivity(Intent(this,BusHomeActivity::class.java))
+//            }
+
             //validate data
-            validateData()
+            //validateData()
             //pushToDb() //this is the error
-            startActivity(Intent(this, HomeActivity::class.java))
+            //startActivity(Intent(this, HomeActivity::class.java))
 
         }
 
@@ -162,7 +180,8 @@ public class MainActivity : AppCompatActivity() {
        //new
         uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
         val user = User(username, email, password, firstName, lastName, eircode)
-        database2.child("accounts").child(uid).setValue(user)
+        //added '.child("USers") here
+        database2.child("accounts").child("Users").child(uid).setValue(user)
 
 
         //database2.child("accounts").child(uid).setValue(user) //new
@@ -185,4 +204,6 @@ public class MainActivity : AppCompatActivity() {
             return super.onSupportNavigateUp()
         }
     }
+
+
 

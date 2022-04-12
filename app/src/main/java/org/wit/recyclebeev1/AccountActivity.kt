@@ -49,7 +49,7 @@ class AccountActivity : AppCompatActivity() {
         val uid = auth.currentUser?.uid
 
       //  setContentView(R.layout.activity_account)
-        databaseReference = FirebaseDatabase.getInstance().getReference("accounts")
+        databaseReference = FirebaseDatabase.getInstance().getReference("accounts").child("Users") //new users code here
         binding.saveBtn.setOnClickListener {
 
             showProgressBar()
@@ -97,7 +97,7 @@ class AccountActivity : AppCompatActivity() {
            // val account = Account(firstName, lastname, eircode)
             val user = User( firstName, lastName, eircode)
             if (uid != null) {
-                val objRef = database3.child("accounts")
+                val objRef = database3.child("accounts").child("Users") //added users code here
                 objRef.child(uid).child("firstName").setValue(firstName)
                 objRef.child(uid).child("lastName").setValue(lastName)
                 objRef.child(uid).child("eircode").setValue(eircode)
