@@ -18,6 +18,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecycleBeeV1">
         <activity
+            android:name=".BusHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".AccountDisplayActivity"
             android:exported="false" />
         <activity

@@ -64,7 +64,7 @@ public class MainActivity : AppCompatActivity() {
 
 
         //Checkboxes
-        val chk = findViewById<CheckBox>(R.id.userCheckBox)
+        //val chk = findViewById<CheckBox>(R.id.userCheckBox)
         //val chk2 = findViewById<CheckBox>(R.id.checkBox2)
 
         //config actionbar, enable back button
@@ -90,10 +90,7 @@ public class MainActivity : AppCompatActivity() {
         binding.signUpBtn.setOnClickListener {
 
             //checkbox code?
-            if(chk.isChecked){
-                validateData()
-                startActivity(Intent(this, HomeActivity::class.java))
-            }
+
 
 //            if(chk2.isChecked){
 //                validateBusData()
@@ -101,9 +98,9 @@ public class MainActivity : AppCompatActivity() {
 //            }
 
             //validate data
-            //validateData()
+            validateData()
             //pushToDb() //this is the error
-            //startActivity(Intent(this, HomeActivity::class.java))
+            //startActivity(Intent(this, HomeActivity::class.java))//dont think I need this as a startactivity is in firebaseSignup()
 
         }
 
@@ -155,11 +152,28 @@ public class MainActivity : AppCompatActivity() {
 
                 val email = firebaseUser!!.email
 
+                val chk = findViewById<CheckBox>(R.id.userCheckBox)
+                val chk2 = findViewById<CheckBox>(R.id.busCheckbox)
+
                 Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
 
-                pushToDb()
+                //checkbox if statement in here?
+
+                if(chk.isChecked){
+                    //validateData()
+                    pushToDb()
+                    startActivity(Intent(this, HomeActivity::class.java))
+                }
+
+                if(chk2.isChecked){
+//
+                    pushToDb2()
+                    startActivity(Intent(this,BusHomeActivity::class.java))
+                }
+
+                //pushToDb()
                 //open profile
-                startActivity(Intent(this, HomeActivity::class.java))
+               // startActivity(Intent(this, HomeActivity::class.java))
                database.setValue(User(username, email,password, firstName, lastName, eircode)) //new details
                 finish()
 
@@ -197,6 +211,19 @@ public class MainActivity : AppCompatActivity() {
        // }.addOnFailureListener {
        //     Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
       //  }
+    }
+
+    fun pushToDb2() {
+
+        val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
+
+        //new
+        uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
+        val user = User(username, email, password, firstName, lastName, eircode)
+        //added '.child("USers") here
+        database2.child("accounts").child("BusinessUsers").child(uid).setValue(user)
+
+
     }
 
         override fun onSupportNavigateUp(): Boolean {
