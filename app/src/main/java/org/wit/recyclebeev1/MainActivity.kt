@@ -31,15 +31,14 @@ public class MainActivity : AppCompatActivity() {
     //firebaseauth
     private lateinit var firebaseAuth: FirebaseAuth
 
+    //variables
     private var email = ""
     private var password = ""
     private var username = ""
-
-    //new------
     private var firstName=""
     private var lastName = ""
     private var eircode = ""
-    //------------
+
 
     private lateinit var uid:String
 
@@ -164,6 +163,8 @@ public class MainActivity : AppCompatActivity() {
         uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
         val user = User(username, email, password, firstName, lastName, eircode)
         database2.child("accounts").child(uid).setValue(user)
+
+
         //database2.child("accounts").child(uid).setValue(user) //new
 
        // database2.child("accounts").child(username).setValue(user).addOnSuccessListener {

@@ -1,6 +1,7 @@
 package org.wit.recyclebeev1
 
 import android.app.Dialog
+import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -39,6 +40,23 @@ class AccountDisplayActivity : AppCompatActivity() {
         databaseReference = database3.child("accounts")
         if(uid.isNotEmpty()){
             getUserData()
+        }
+
+        binding.userAccountBtn.setOnClickListener {
+            startActivity(Intent(this, AccountActivity::class.java))
+
+        }
+
+        binding.deleteAccountBtn.setOnClickListener {
+
+            databaseReference.child(uid).removeValue().addOnSuccessListener {
+                Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener {
+                Toast.makeText(this, "Account deletion failed", Toast.LENGTH_SHORT).show()
+            }
+
+            startActivity(Intent(this, LaunchActivity::class.java))
+
         }
     }
 

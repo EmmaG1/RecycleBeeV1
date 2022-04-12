@@ -113,10 +113,10 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
-        binding.userAccountBtn.setOnClickListener {
-            startActivity(Intent(this, AccountActivity::class.java))
-
-        }
+//        binding.userAccountBtn.setOnClickListener {
+//            startActivity(Intent(this, AccountActivity::class.java))
+//
+//        }
 
         binding.accountDisplayBtn.setOnClickListener {
             startActivity(Intent(this, AccountDisplayActivity::class.java))
