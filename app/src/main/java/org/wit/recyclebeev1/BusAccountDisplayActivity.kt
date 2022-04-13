@@ -5,9 +5,11 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -54,22 +56,32 @@ class BusAccountDisplayActivity : AppCompatActivity() {
 
         binding.deleteAccountBtn.setOnClickListener {
 
-            databaseReference.child(uid).removeValue().addOnSuccessListener {
-                Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                Toast.makeText(this, "Account deletion failed", Toast.LENGTH_SHORT).show()
-            }
+            databaseReference.child(uid).removeValue()
+            startActivity(Intent(this, LaunchActivity::class.java))
+            val user = Firebase.auth.currentUser!!
+            user.delete()
 
-//            val user = Firebase.auth.currentUser!!
+
+//            databaseReference.child(uid).removeValue().addOnSuccessListener {
+//                Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
+//                startActivity(Intent(this, LaunchActivity::class.java))
 //
-//            user.delete()
-//                .addOnCompleteListener { task ->
+//
+//                val user = Firebase.auth.currentUser!!
+//                user.delete().addOnCompleteListener { task ->
 //                    if (task.isSuccessful) {
-//                        Log.d(TAG, "User account deleted.")
+//                        Log.d("", "User account deleted.")
 //                    }
 //                }
+//
+//            }.addOnFailureListener {
+//                Toast.makeText(this, "Account deletion failed", Toast.LENGTH_SHORT).show()
+//            }
 
-            startActivity(Intent(this, LaunchActivity::class.java))
+            //put this code inside succ
+
+
+
 
         }
     }

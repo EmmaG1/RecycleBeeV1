@@ -5,9 +5,11 @@ import android.content.Intent
 import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Window
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -48,26 +50,42 @@ class AccountDisplayActivity : AppCompatActivity() {
         }
 
         binding.deleteAccountBtn.setOnClickListener {
+            val user = Firebase.auth.currentUser!!
 
-            databaseReference.child(uid).removeValue().addOnSuccessListener {
-                Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
-            }.addOnFailureListener {
-                Toast.makeText(this, "Account deletion failed", Toast.LENGTH_SHORT).show()
-            }
-
-//            val user = Firebase.auth.currentUser!!
-//
-//            user.delete()
-//                .addOnCompleteListener { task ->
-//                    if (task.isSuccessful) {
-//                        Log.d(TAG, "User account deleted.")
-//                    }
-//                }
+            databaseReference.child(uid).removeValue()
 
             startActivity(Intent(this, LaunchActivity::class.java))
+            user.delete()
+
+
+            //Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
+
+//getting rifd of the success/fail listeners brought it to launch page
+//            databaseReference.child(uid).removeValue().addOnSuccessListener {
+//                Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
+//
+//
+//                //should take it out of Auth db
+//                val user = Firebase.auth.currentUser!!
+//
+//                user.delete()
+//                    .addOnCompleteListener { task ->
+//                        if (task.isSuccessful) {
+//                            Log.d("business account", "User account deleted.")
+//                        }
+//                    }
+//
+//                startActivity(Intent(this, LaunchActivity::class.java))
+//
+//            }.addOnFailureListener {
+//                Toast.makeText(this, "Account deletion failed", Toast.LENGTH_SHORT).show()
+//            }
+
+
 
         }
     }
+
 
     private fun getUserData() {
 
