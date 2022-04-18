@@ -9,8 +9,13 @@ import android.text.TextUtils
 import android.util.Patterns
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
+import com.google.android.gms.common.util.ArrayUtils.contains
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
 import org.wit.recyclebeev1.databinding.ActivityLoginMainBinding
+
 
 class LoginMainActivity : AppCompatActivity() {
 
@@ -29,6 +34,8 @@ class LoginMainActivity : AppCompatActivity() {
     private var email = ""
     private var password = ""
 
+    private lateinit var databaseReference: DatabaseReference
+    private lateinit var uid: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +55,16 @@ class LoginMainActivity : AppCompatActivity() {
         //init firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
+
+        //---new login page ----------
+        firebaseAuth = FirebaseAuth.getInstance()
+        uid = firebaseAuth.currentUser?.uid.toString()
+        val database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/accounts/BusinessUsers/").reference //new
+        databaseReference = database3.child("accounts").child("BusinessUsers")
+//        if(uid.isNotEmpty()){
+//            getUserData()
+//        }
+        //------------
 
         //click noAccount TextView to bring you to Register page
         binding.noAccountTv.setOnClickListener {
@@ -96,16 +113,34 @@ class LoginMainActivity : AppCompatActivity() {
                 val firebaseUser = firebaseAuth.currentUser
                 val email = firebaseUser!!.email
                 Toast.makeText(this, "Logged in as $email", Toast.LENGTH_SHORT).show()
+               // val dbRef = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/accounts/BusinessUsers/").reference
 
                 //open homepage
                 //could i put an if statement here, if user is in "accounts", "businessUSers" on database, show bushomepage?
                 //if currentuser in databasereference https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/accounts/BusinessUsers show busHome
                 //or use two login screens and point to 2 different homepages or checkbox (not secure)
                 //befire we go here: if statement, is user Bus or Users?
+
+                //old way ----
                 startActivity(Intent(this,HomeActivity::class.java))
                 finish()
+                //-----
+
 
                 //if email in busDB user returns as bus user go bushome, else go home
+               // val databaseReference = FirebaseDatabase.getInstance().reference.child("BusinessUser")
+
+
+//                if(dbRef.orderByChild("email").equals(email)){
+//                    startActivity(Intent(this,BusHomeActivity::class.java))
+//
+//
+//                }else{
+//                    startActivity(Intent(this,HomeActivity::class.java))
+//                }
+//                finish()
+
+
 
             }
             .addOnFailureListener { e->
@@ -125,6 +160,26 @@ class LoginMainActivity : AppCompatActivity() {
             finish()
         }
     }
+
+//    private fun getUserData() {
+//
+//
+//        //showProgressBar()
+//        //database3.child(uid).addValueEventListener(object: ValueEventListener{
+//        databaseReference.child(uid).addValueEventListener(object: ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                user = snapshot.getValue(User::class.java)!!
+//
+//                //getUserProfilePic()
+//                //Toast.makeText(this@AccountDisplayActivity, "Successfully recieved user profile data", Toast.LENGTH_SHORT)
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                //hideProgressBar()
+//                Toast.makeText(this@LoginMainActivity, "Failed to get user profile data", Toast.LENGTH_SHORT)
+//            }
+//        })
+//    }
 
 
 }

@@ -122,6 +122,11 @@ class HomeActivity : AppCompatActivity() {
             startActivity(Intent(this, AccountDisplayActivity::class.java))
 
         }
+
+        binding.storeListNewBtn.setOnClickListener {
+            startActivity(Intent(this, StoreListActivity::class.java))
+
+        }
 //-------------------------------end of button menu
     }
 

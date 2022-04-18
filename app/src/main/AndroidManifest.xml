@@ -18,6 +18,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecycleBeeV1">
         <activity
+            android:name=".StoreListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecycleMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".BusAccountDisplayActivity"
             android:exported="false" />
         <activity
