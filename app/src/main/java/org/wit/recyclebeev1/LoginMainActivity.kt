@@ -56,17 +56,17 @@ class LoginMainActivity : AppCompatActivity() {
 
         //init firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance()
-        checkUser()
+        //checkUser()
 
         //---new login page ----------
         //if user in DBref
-        firebaseAuth = FirebaseAuth.getInstance()
-        uid = firebaseAuth.currentUser?.uid.toString()
-        val database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/accounts/BusinessUsers/").reference //new
-        databaseReference = database3.child("accounts").child("BusinessUsers")
-        if(uid.isNotEmpty()){
-           // getUserData()
-        }
+//        firebaseAuth = FirebaseAuth.getInstance()
+//        uid = firebaseAuth.currentUser?.uid.toString()
+//        val database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/accounts/BusinessUsers/").reference //new
+//        databaseReference = database3.child("accounts").child("BusinessUsers")
+//        if(uid.isNotEmpty()){
+//           // getUserData()
+//        }
         //------------
 
         //click noAccount TextView to bring you to Register page
@@ -118,12 +118,12 @@ class LoginMainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Logged in as $email", Toast.LENGTH_SHORT).show()
                // val dbRef = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/accounts/BusinessUsers/").reference
 
-                userLogin()
+                //userLogin()
                 //getUserData()
 
                 //old way ----
-               // startActivity(Intent(this,HomeActivity::class.java))
-                //finish()
+                startActivity(Intent(this,HomeActivity::class.java))
+                finish()
                 //-----
 
 
@@ -136,7 +136,7 @@ class LoginMainActivity : AppCompatActivity() {
             }
     }
 
-    private fun userLogin() {
+   // private fun userLogin() {
 
 
 //        if (databaseReference.child("BusinessUser").orderByChild("email").equalTo(user.email))
@@ -147,29 +147,29 @@ class LoginMainActivity : AppCompatActivity() {
 //            //open Home
 //
 //        }
-        databaseReference.child("BusinessUser").addValueEventListener(object: ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                user = snapshot.getValue(User(email)::class.java)!!
-                //if(user("email").equals(email)){
-                if (user.equals(email)) {
-                    //open Bushome
-                    startActivity(Intent(this@LoginMainActivity,BusHomeActivity::class.java))
-                } else {
-                    //open Home
-                    startActivity(Intent(this@LoginMainActivity,HomeActivity::class.java))
-                }
-
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-                //hideProgressBar()
-                Toast.makeText(
-                    this@LoginMainActivity,
-                    "Failed to get user profile data",
-                    Toast.LENGTH_SHORT
-                )
-            }
-        })
+//        databaseReference.child("BusinessUser").addValueEventListener(object: ValueEventListener {
+//            override fun onDataChange(snapshot: DataSnapshot) {
+//                user = snapshot.getValue(User(email)::class.java)!!
+//                //if(user("email").equals(email)){
+//                if (user.equals(email)) {
+//                    //open Bushome
+//                    startActivity(Intent(this@LoginMainActivity,BusHomeActivity::class.java))
+//                } else {
+//                    //open Home
+//                    startActivity(Intent(this@LoginMainActivity,HomeActivity::class.java))
+//                }
+//
+//            }
+//
+//            override fun onCancelled(error: DatabaseError) {
+//                //hideProgressBar()
+//                Toast.makeText(
+//                    this@LoginMainActivity,
+//                    "Failed to get user profile data",
+//                    Toast.LENGTH_SHORT
+//                )
+//            }
+//        })
 
     }
 
@@ -203,17 +203,17 @@ class LoginMainActivity : AppCompatActivity() {
    // }
 
     //need to change this to two homepages
-    private fun checkUser() {
-        //if user is already logged in g oto profile acitivty
-        //get current user
-        val firebaseUser = firebaseAuth.currentUser
-        if (firebaseUser != null) {
-            //user is already logged in
-            startActivity(Intent(this,HomeActivity::class.java))
-            finish()
-        }
-    }
-}
+//    private fun checkUser() {
+//        //if user is already logged in g oto profile acitivty
+//        //get current user
+//        val firebaseUser = firebaseAuth.currentUser
+//        if (firebaseUser != null) {
+//            //user is already logged in
+//            startActivity(Intent(this,HomeActivity::class.java))
+//            finish()
+//        }
+//    }
+//}
 
 
 

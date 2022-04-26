@@ -164,13 +164,11 @@ public class MainActivity : AppCompatActivity() {
                 //checkbox if statement in here?
 
                 if(chk.isChecked){
-                    //validateData()
                     pushToDb()
                     startActivity(Intent(this, HomeActivity::class.java))
                 }
 
                 if(chk2.isChecked){
-//
                     pushToDb2()
                     startActivity(Intent(this,BusHomeActivity::class.java))
                 }
@@ -190,7 +188,7 @@ public class MainActivity : AppCompatActivity() {
             }
     }
 
-    //probbly should have the screen from here
+    //
     fun pushToDb() {
 
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference

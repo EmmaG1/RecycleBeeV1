@@ -19,9 +19,8 @@ class MyAdapter(private val storeList : ArrayList<User>) : RecyclerView.Adapter<
 
         holder.busName.text = currentitem.businessName
         holder.busEmail.text = currentitem.email
-        //holder.busAddress.text = currentitem.busAddress
         holder.busAddress.text = currentitem.businessAddress
-        holder.busBio.text = currentitem.businessBio //these all match whats in user  class
+        holder.busBio.text = currentitem.businessBio
 
     }
 
