@@ -57,6 +57,11 @@ class BusHomeActivity : AppCompatActivity() {
             startActivity(Intent(this, BusAccountDisplayActivity::class.java))
 
         }
+
+        binding.storeListNewBtn.setOnClickListener {
+            startActivity(Intent(this, StoreListActivity::class.java))
+
+        }
     }
 
     private fun checkUser() {

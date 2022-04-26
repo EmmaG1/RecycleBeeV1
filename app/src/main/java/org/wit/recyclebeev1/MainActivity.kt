@@ -41,6 +41,7 @@ public class MainActivity : AppCompatActivity() {
     private var eircode = ""
     private var businessName = ""
     private var businessAddress = ""
+   // private var busAddress = ""
     private var businessBio = ""
 
 
@@ -222,7 +223,7 @@ public class MainActivity : AppCompatActivity() {
 
         //new
         uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
-        val user = User(username, email, password, businessName, businessAddress, businessBio)
+        val user = User(username, email, password, businessName, businessAddress, businessBio) //businessAddress
         //added '.child("USers") here
         database2.child("accounts").child("BusinessUsers").child(uid).setValue(user)
 

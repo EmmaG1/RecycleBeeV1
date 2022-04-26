@@ -35,7 +35,8 @@ class BusRegister : AppCompatActivity() {
     private var password = ""
     private var username = ""
     private var busName =""
-    private var busAddress=""
+    //private var busAddress=""
+    private var businessAddress=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,7 +81,7 @@ class BusRegister : AppCompatActivity() {
         password = binding.etBusPassword2.text.toString().trim()
         username = binding.etBusUsername.text.toString().trim()
         busName = binding.etBusName.text.toString().trim()
-        busAddress = binding.etBusAdd.text.toString().trim()
+        businessAddress = binding.etBusAdd.text.toString().trim()
 
 
 
@@ -98,7 +99,7 @@ class BusRegister : AppCompatActivity() {
         } else if (TextUtils.isEmpty(busName)) {
             //name isnt entered
             binding.etBusName.error = "Please enter name"
-        } else if (TextUtils.isEmpty(busAddress)) {
+        } else if (TextUtils.isEmpty(businessAddress)) {
             //address isnt entered
             binding.etBusAdd.error = "Please enter address"
         } else {
@@ -141,7 +142,7 @@ class BusRegister : AppCompatActivity() {
     fun pushToDb() {
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
 
-        val user = User(username, email, password, busName, busAddress)
+        val user = User(username, email, password, busName, businessAddress)
         database2.child("accounts").child(username).setValue(user) //new
 
         // database2.child("accounts").child(username).setValue(user).addOnSuccessListener {
