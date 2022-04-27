@@ -21,4 +21,8 @@
 
     <string name="new1">Paper can be recycled by this and that and the other. Paper can be recycled by this and that and the other. Paper can be recycled by this and that and the other. Paper can be recycled by this and that and the other. </string>
     <string name="new2">Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. </string>
+    <string name="new3">tins</string>
+    <string name="new4">batteries</string>
+    <string name="new5">glass</string>
+    <string name="new6">textiles</string>
 </resources>

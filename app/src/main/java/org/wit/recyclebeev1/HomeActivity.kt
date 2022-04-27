@@ -129,7 +129,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.recyclingBtn.setOnClickListener {
-            startActivity(Intent(this, RecycleMenuActivity::class.java))
+            startActivity(Intent(this, RecycleMenuTwo::class.java))
 
         }
 //-------------------------------end of button menu

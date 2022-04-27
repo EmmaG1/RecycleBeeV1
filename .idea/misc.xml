@@ -7,20 +7,27 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_account.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_account_display.xml" value="0.12447916666666667" />
+        <entry key="app/src/main/res/layout/activity_battery.xml" value="0.23097826086956522" />
         <entry key="app/src/main/res/layout/activity_bus_account.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/activity_bus_account_display.xml" value="0.24947916666666667" />
         <entry key="app/src/main/res/layout/activity_bus_home.xml" value="0.2635416666666667" />
         <entry key="app/src/main/res/layout/activity_bus_register.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_glass.xml" value="0.23097826086956522" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.21" />
         <entry key="app/src/main/res/layout/activity_login_main.xml" value="0.234375" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.24114583333333334" />
         <entry key="app/src/main/res/layout/activity_maps.xml" value="0.11979166666666667" />
+        <entry key="app/src/main/res/layout/activity_paper.xml" value="0.23097826086956522" />
+        <entry key="app/src/main/res/layout/activity_plastic.xml" value="0.23097826086956522" />
         <entry key="app/src/main/res/layout/activity_read_store_data.xml" value="0.16802536231884058" />
         <entry key="app/src/main/res/layout/activity_recycle_menu.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_recycle_menu_two.xml" value="0.23097826086956522" />
         <entry key="app/src/main/res/layout/activity_store_list.xml" value="0.24547101449275363" />
         <entry key="app/src/main/res/layout/activity_store_list_input.xml" value="0.16802536231884058" />
+        <entry key="app/src/main/res/layout/activity_textile.xml" value="0.23097826086956522" />
+        <entry key="app/src/main/res/layout/activity_tin_can.xml" value="0.23097826086956522" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.24270833333333333" />
         <entry key="app/src/main/res/layout/dialog_wait.xml" value="0.23072916666666668" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.1308876811594203" />

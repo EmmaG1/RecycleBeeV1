@@ -18,6 +18,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RecycleBeeV1">
         <activity
+            android:name=".TextileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GlassActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BatteryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TinCanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlasticActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaperActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RecycleMenuTwo"
+            android:exported="false" />
+        <activity
             android:name=".StoreListActivity"
             android:exported="false" />
         <activity
