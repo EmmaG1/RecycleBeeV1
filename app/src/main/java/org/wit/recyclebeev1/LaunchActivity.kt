@@ -14,7 +14,7 @@ class LaunchActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLaunchBinding
 
     //Actionbar
-    private lateinit var actionBar: ActionBar
+   // private lateinit var actionBar: ActionBar
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +25,8 @@ class LaunchActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //config actionbar
-        actionBar = supportActionBar!!
-        actionBar.title = "Launch Screen"
+        //actionBar = supportActionBar!!
+        //actionBar.title = "Launch Screen"
 
 
         //click userRegBtn Button to bring you to Register page
