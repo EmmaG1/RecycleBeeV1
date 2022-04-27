@@ -4,14 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".LaunchActivity">
 
 
     <Button
         android:id="@+id/recyclingBtn"
-        android:layout_width="403dp"
-        android:layout_height="95dp"
+        android:layout_width="294dp"
+        android:layout_height="77dp"
         android:text="Recycling"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,13 +22,13 @@
         app:layout_constraintVertical_bias="0.232" />
 
 
-
-
     <Button
         android:id="@+id/logoutBtn"
-        android:layout_width="184dp"
-        android:layout_height="91dp"
+        android:layout_width="125dp"
+        android:layout_height="66dp"
         android:text="Logout"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,29 +36,36 @@
         app:layout_constraintVertical_bias="0.951" />
 
 
-
     <Button
         android:id="@+id/accountDisplayBtn"
-        android:layout_width="392dp"
-        android:layout_height="100dp"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="292dp"
+        android:layout_height="77dp"
         android:text="Account"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.469"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.397"
+        app:strokeColor="@color/darkgreen" />
 
     <Button
         android:id="@+id/storeListBtn"
-        android:layout_width="403dp"
-        android:layout_height="95dp"
-        android:text="Store List"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="289dp"
+        android:layout_height="77dp"
+        android:text="Search Store"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748" />
+        app:layout_constraintVertical_bias="0.748"
+        app:strokeColor="@color/darkgreen" />
 
     <TextView
         android:id="@+id/emailTV"
@@ -71,25 +81,31 @@
 
     <Button
         android:id="@+id/mapBtn"
-        android:layout_width="396dp"
-        android:layout_height="98dp"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="301dp"
+        android:layout_height="77dp"
         android:text="map"
+        android:textColor="@color/darkgreen"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.056"
+        app:strokeColor="@color/darkgreen" />
 
     <Button
         android:id="@+id/storeListNewBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="StoreListNew"
+        android:layout_width="291dp"
+        android:layout_height="81dp"
+        android:text="Business List"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.913" />
+        app:layout_constraintVertical_bias="0.572" />
 </androidx.constraintlayout.widget.ConstraintLayout>

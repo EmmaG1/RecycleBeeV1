@@ -9,9 +9,11 @@
 
     <Button
         android:id="@+id/recyclingBtn"
-        android:layout_width="403dp"
-        android:layout_height="95dp"
+        android:layout_width="270dp"
+        android:layout_height="62dp"
         android:text="Recycling"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,53 +28,53 @@
         android:layout_width="184dp"
         android:layout_height="91dp"
         android:text="Logout"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.951" />
 
-    <Button
-        android:id="@+id/storeListInputBtn"
-        android:layout_width="403dp"
-        android:layout_height="95dp"
-        android:text="Store List Submission"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573" />
 
     <Button
         android:id="@+id/busAccountDisplayBtn"
-        android:layout_width="392dp"
-        android:layout_height="100dp"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="278dp"
+        android:layout_height="63dp"
         android:text="Account"
+        android:textColor="@color/darkgreen"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.469"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
+        app:layout_constraintVertical_bias="0.398" />
 
     <Button
         android:id="@+id/storeListNewBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="StoreListNew"
+        android:layout_width="275dp"
+        android:layout_height="76dp"
+        android:text="Business List"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.913" />
+        app:layout_constraintVertical_bias="0.563" />
 
     <Button
         android:id="@+id/storeListBtn"
-        android:layout_width="403dp"
-        android:layout_height="95dp"
-        android:text="Store List"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="263dp"
+        android:layout_height="78dp"
+        android:text="Find store "
+        android:textColor="@color/darkgreen"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,9 +95,13 @@
 
     <Button
         android:id="@+id/mapBtn"
-        android:layout_width="396dp"
-        android:layout_height="98dp"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="270dp"
+        android:layout_height="65dp"
         android:text="map"
+        android:textColor="@color/darkgreen"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.466"

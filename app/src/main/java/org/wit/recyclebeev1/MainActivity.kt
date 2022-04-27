@@ -73,7 +73,7 @@ public class MainActivity : AppCompatActivity() {
 
         //config actionbar, enable back button
         actionBar = supportActionBar!!
-        actionBar.title = "Register"
+       // actionBar.title = "Register"
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowHomeEnabled(true)
 

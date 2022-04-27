@@ -40,11 +40,11 @@ class LaunchActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginMainActivity::class.java))
 
         }
-
-        binding.busLoginTv.setOnClickListener {
-            startActivity(Intent(this, BusRegister::class.java))
-
-        }
+//old bus login textview box
+//        binding.busLoginTv.setOnClickListener {
+//            startActivity(Intent(this, BusRegister::class.java))
+//
+//        }
 
 //        binding.mapBtn.setOnClickListener {
 //            startActivity(Intent(this, MapsActivity::class.java))

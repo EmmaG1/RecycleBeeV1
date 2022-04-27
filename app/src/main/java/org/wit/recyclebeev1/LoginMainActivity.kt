@@ -45,8 +45,8 @@ class LoginMainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //configure actionbar
-        actionBar = supportActionBar!!
-        actionBar.title = "login"
+       // actionBar = supportActionBar!!
+        //actionBar.title = "login"
 
         //config progress dialog
         progressDialog = ProgressDialog(this)
@@ -56,7 +56,7 @@ class LoginMainActivity : AppCompatActivity() {
 
         //init firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance()
-        //checkUser()
+        checkUser()
 
         //---new login page ----------
         //if user in DBref
@@ -171,6 +171,18 @@ class LoginMainActivity : AppCompatActivity() {
 //            }
 //        })
 
+    //need to change this to two homepages
+    private fun checkUser() {
+        //if user is already logged in g oto profile acitivty
+        //get current user
+        val firebaseUser = firebaseAuth.currentUser
+        if (firebaseUser != null) {
+            //user is already logged in
+            startActivity(Intent(this,HomeActivity::class.java))
+            finish()
+        }
+    }
+
     }
 
 
@@ -202,17 +214,10 @@ class LoginMainActivity : AppCompatActivity() {
 
    // }
 
-    //need to change this to two homepages
-//    private fun checkUser() {
-//        //if user is already logged in g oto profile acitivty
-//        //get current user
-//        val firebaseUser = firebaseAuth.currentUser
-//        if (firebaseUser != null) {
-//            //user is already logged in
-//            startActivity(Intent(this,HomeActivity::class.java))
-//            finish()
-//        }
-//    }
+
+
+
+
 //}
 
 

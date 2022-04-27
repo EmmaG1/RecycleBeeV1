@@ -61,8 +61,8 @@ class HomeActivity : AppCompatActivity() {
         //--side nav end ------- (also nav_menu slightly changed (toold part) and homepage layout changed (see notes)
 
         //config actionbar
-        actionBar = supportActionBar!! //uncomment this for old button menu
-        actionBar.title = "Home/Profile" //and this
+        //actionBar = supportActionBar!! //uncomment this for old button menu
+        //actionBar.title = "Home/Profile" //and this
 
         //init firebase aith
         firebaseAuth = FirebaseAuth.getInstance()
@@ -143,9 +143,9 @@ class HomeActivity : AppCompatActivity() {
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser != null) {
             //user not null, user is logged in, get user info
-            val email = firebaseUser.email
+           // val email = firebaseUser.email
             //set text view
-            binding.emailTV.text = email
+           // binding.emailTV.text = email
         }
         else {
             //user is null user is not logged in, go to login activity

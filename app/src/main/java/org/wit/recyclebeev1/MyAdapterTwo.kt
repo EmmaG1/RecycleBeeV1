@@ -12,8 +12,8 @@ class MyAdapterTwo (private val recycleList : ArrayList<Recycle>) : RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapterTwo.MyViewHolder {
 
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_recycle_menu, parent, false)
-
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
+//activity_recycle_menu
         return MyViewHolder(itemView)
     }
 
