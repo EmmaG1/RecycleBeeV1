@@ -132,7 +132,7 @@ public class MainActivity : AppCompatActivity() {
 
         } else if (password.length < 6) {
             //pw length is < 6
-            binding.etPassword2.error = "Pw must be 6 chars long"
+            binding.etPassword2.error = "Password must be 6 characters long"
         } else {
             //data is valid, continue signup
             firebaseSignUp()

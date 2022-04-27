@@ -19,8 +19,10 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
 
-    <string name="new1">Paper can be recycled by this and that and the other. Paper can be recycled by this and that and the other. Paper can be recycled by this and that and the other. Paper can be recycled by this and that and the other. </string>
-    <string name="new2">Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. Plastic is not cool. </string>
+    <string name="new1">Paper that can be recycled: newspapers, magazines, telephone books, office paper, junk mail, comics and light cardboard. </string>
+    <string name="new12">Preparation: Ensure items are clean from any organic material like food or grease. </string>
+    <string name="new2">Plastic that can be recycled: Plastic bottles, bottle tops and cartons.</string>
+    <string name="new22">Preparation: Plastic items placed in your recycling bin need to be clean, dry and loose. This means there should be no food or liquids left on/in your plastic items, and you should place all the items loosely in the bin </string>
     <string name="new3">tins</string>
     <string name="new4">batteries</string>
     <string name="new5">glass</string>

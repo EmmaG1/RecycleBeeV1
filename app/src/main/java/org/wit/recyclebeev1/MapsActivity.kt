@@ -57,7 +57,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
 
         val recyclebin1 = LatLng(52.659784,-7.240055)
-        mMap.addMarker(MarkerOptions().position(recyclebin1).title("bottle bank") )
+        mMap.addMarker(MarkerOptions().position(recyclebin1).title("Eurospar carpark - Bottle Bank") )
+
+        val recyclebin2 = LatLng(52.666784,-7.241055)
+        mMap.addMarker(MarkerOptions().position(recyclebin2).title("TK Mxx - Textile Recycling") )
+
+        val recyclebin3 = LatLng(52.659782,-7.241055)
+        mMap.addMarker(MarkerOptions().position(recyclebin3).title("Sam's Bakery - Refill Stations") )
+
        // options.icon(BitmapDescriptorFactory.)
 
        // mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))

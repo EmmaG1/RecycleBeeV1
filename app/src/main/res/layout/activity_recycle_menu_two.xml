@@ -9,51 +9,51 @@
 
     <Button
         android:id="@+id/plasticBtn"
-        android:layout_width="407dp"
-        android:layout_height="45dp"
+        android:layout_width="410dp"
+        android:layout_height="69dp"
         android:text="Plastic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163" />
-
+        app:layout_constraintVertical_bias="0.188" />
 
     <Button
         android:id="@+id/textilesBtn"
-        android:layout_width="393dp"
-        android:layout_height="59dp"
+        android:layout_width="404dp"
+        android:layout_height="67dp"
         android:text="textiles"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63" />
+        app:layout_constraintVertical_bias="0.774" />
 
     <Button
         android:id="@+id/tinCanBtn"
-        android:layout_width="392dp"
-        android:layout_height="57dp"
+        android:layout_width="407dp"
+        android:layout_height="78dp"
         android:text="Tins and cans"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.274" />
+        app:layout_constraintVertical_bias="0.321" />
 
     <Button
         android:id="@+id/batteryBtn"
-        android:layout_width="406dp"
-        android:layout_height="64dp"
+        android:layout_width="407dp"
+        android:layout_height="75dp"
         android:text="batteries and electricals"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.192"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.394" />
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
         android:id="@+id/emailTV"
@@ -69,8 +69,8 @@
 
     <Button
         android:id="@+id/paperBtn"
-        android:layout_width="421dp"
-        android:layout_height="52dp"
+        android:layout_width="396dp"
+        android:layout_height="79dp"
         android:text="Paper"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,12 +81,13 @@
 
     <Button
         android:id="@+id/glassBtn"
-        android:layout_width="402dp"
-        android:layout_height="45dp"
+        android:layout_width="409dp"
+        android:layout_height="70dp"
         android:text="glass"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.516" />
+        app:layout_constraintVertical_bias="0.626" />
 </androidx.constraintlayout.widget.ConstraintLayout>
