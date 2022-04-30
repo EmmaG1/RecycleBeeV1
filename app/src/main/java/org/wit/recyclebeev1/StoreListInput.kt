@@ -37,10 +37,10 @@ class StoreListInput : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_store_list_input)
+
         binding = ActivityStoreListInputBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        //setContentView(R.layout.activity_bus_register)
+
         //config actionbar, enable back button
         actionBar = supportActionBar!!
         actionBar.title = "Store submission"
@@ -53,7 +53,7 @@ class StoreListInput : AppCompatActivity() {
 
         binding.submitStoreBtn.setOnClickListener {
             validateData2()
-            pushToDb2() //this is the error
+            pushToDb2()
             startActivity(Intent(this, BusHomeActivity::class.java))
 
         }

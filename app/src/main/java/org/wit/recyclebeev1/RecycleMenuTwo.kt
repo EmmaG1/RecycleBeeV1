@@ -17,10 +17,6 @@ class RecycleMenuTwo : AppCompatActivity() {
         binding = ActivityRecycleMenuTwoBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-       // setContentView(R.layout.activity_recycle_menu_two)
-
-
-
 
         binding.glassBtn.setOnClickListener {
             startActivity(Intent(this, GlassActivity::class.java))

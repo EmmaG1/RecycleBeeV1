@@ -30,9 +30,9 @@ class StoreListActivity : AppCompatActivity() {
 
     private fun getStoreData() {
         dbref = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
-      //  dbref = FirebaseDatabase.getInstance().getReference("accounts") //or BusinessUsers?
+
         dbref.child("accounts").child("BusinessUsers").addValueEventListener(object : ValueEventListener{
-        //dbref.addValueEventListener(object : ValueEventListener{
+
 
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()){

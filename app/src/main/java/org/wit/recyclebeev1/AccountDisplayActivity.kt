@@ -38,7 +38,7 @@ class AccountDisplayActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         uid = auth.currentUser?.uid.toString()
 
-        //databaseReference= FirebaseDatabase.getInstance().getReference("accounts")
+
         val database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference //new
         databaseReference = database3.child("accounts").child("Users") //added users code here
         if(uid.isNotEmpty()){
@@ -51,17 +51,15 @@ class AccountDisplayActivity : AppCompatActivity() {
         }
 
         binding.deleteAccountBtn.setOnClickListener {
-           // val user = Firebase.auth.currentUser!!
-           // val user = auth.currentUser!!
             databaseReference.child(uid).removeValue()
-           // deleteUser()
+            // Attempting to delete user from FirebaseAtih - doesnt work
+            // val user = Firebase.auth.currentUser!!
+            // val user = auth.currentUser!!
             startActivity(Intent(this, LaunchActivity::class.java))
            // user.delete()
 
 
-            //Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
-
-//getting rifd of the success/fail listeners brought it to launch page
+// second attempt at deleting user from Firebase Auth  - doesnt work
 //            databaseReference.child(uid).removeValue().addOnSuccessListener {
 //                Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
 //
@@ -88,43 +86,19 @@ class AccountDisplayActivity : AppCompatActivity() {
         }
     }
 
-//    private fun deleteUser() {
-//        val user = Firebase.auth.currentUser!!
-
-// Get auth credentials from the user for re-authentication. The example below shows
-// email and password credentials but there are multiple possible providers,
-// such as GoogleAuthProvider or FacebookAuthProvider.
-//        val credential = EmailAuthProvider
-//
-//            .getCredential("bob3@n.com", "1234567")
-//
-//// Prompt the user to re-provide their sign-in credentials
-//        user.reauthenticate(credential)
-//            .addOnCompleteListener { Log.d("", "User re-authenticated.")
-//
-//            }
-//                user.delete()
-//                    .addOnCompleteListener { task ->
-//                        if (task.isSuccessful) {
-//                            Log.d("", "User account deleted.")
-//                        }
-//                    }
-//
-//    }
 
 
     private fun getUserData() {
 
-
          showProgressBar()
-        //database3.child(uid).addValueEventListener(object: ValueEventListener{
+
         databaseReference.child(uid).addValueEventListener(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 user = snapshot.getValue(User::class.java)!!
                 binding.tvFullName.setText(user.firstName + " " + user.lastName)
                 binding.tvEircode.setText(user.eircode)
                 getUserProfilePic()
-                //Toast.makeText(this@AccountDisplayActivity, "Successfully recieved user profile data", Toast.LENGTH_SHORT)
+
             }
 
             override fun onCancelled(error: DatabaseError) {

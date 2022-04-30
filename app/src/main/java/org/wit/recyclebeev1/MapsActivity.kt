@@ -65,20 +65,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
         val recyclebin3 = LatLng(52.659782,-7.241055)
         mMap.addMarker(MarkerOptions().position(recyclebin3).title("Sam's Bakery - Refill Stations") )
 
-       // options.icon(BitmapDescriptorFactory.)
 
-       // mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
     }
 
     private fun setUpMap() {
         if (ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED)// && ActivityCompat.checkSelfPermission(
-                //this,
-               // Manifest.permission.ACCESS_COARSE_LOCATION
-            //) != PackageManager.PERMISSION_GRANTED
-        //)
+            ) != PackageManager.PERMISSION_GRANTED)
+
             {
                 ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_REQUEST_CODE)
 

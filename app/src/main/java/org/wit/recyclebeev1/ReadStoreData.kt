@@ -16,7 +16,7 @@ class ReadStoreData : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // setContentView(R.layout.activity_read_store_data)
+
 
         binding = ActivityReadStoreDataBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -40,9 +40,9 @@ class ReadStoreData : AppCompatActivity() {
 
     private fun readData(storeName: String) {
 
-        //database = FirebaseDatabase.getInstance().getReference("stores")
+
         database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
-        //database3.child(storeName).get().addOnSuccessListener {
+
         database3.child("stores").child(storeName).get().addOnSuccessListener {
 
             if (it.exists()){

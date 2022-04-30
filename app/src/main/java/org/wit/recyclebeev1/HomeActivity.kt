@@ -19,8 +19,10 @@ import org.wit.recyclebeev1.fragments.UserFragment
 
 class HomeActivity : AppCompatActivity() {
 
+    // navigation menu
    // lateinit var toggle: ActionBarDrawerToggle //side nav bar
     //lateinit var drawerLayout: DrawerLayout
+
     //viewBinding
     private lateinit var binding: ActivityHomeBinding
 
@@ -32,9 +34,9 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityHomeBinding.inflate(layoutInflater) //old button
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root) //old button
-       // setContentView(R.layout.activity_home) //new side nav
+
 
         //------side nav start ----------
 //        drawerLayout = findViewById(R.id.drawerLayout) //side nav
@@ -64,19 +66,17 @@ class HomeActivity : AppCompatActivity() {
         //actionBar = supportActionBar!! //uncomment this for old button menu
         //actionBar.title = "Home/Profile" //and this
 
-        //init firebase aith
+        //init firebase auth
         firebaseAuth = FirebaseAuth.getInstance()
-        checkUser() //uncomment for old home button menu
+        checkUser()
 
         //handle click, logout
-        //UNCOMMENT THUIS FOR OLD NAV
-
         //uncomment this when logoutBtn implented into new home! ------------
         binding.logoutBtn.setOnClickListener {
             firebaseAuth.signOut()
             checkUser()
         }
-//------------------end of old home buttom menu
+//------------------end of old home buttom menu, beginning of fragments (unused)
         val homeFragment = HomeFragment()
         val mapsFragment = MapsFragment() //changed
         val userFragment = UserFragment()
@@ -103,6 +103,7 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
+        //old button submission menu
 //        binding.storeListInputBtn.setOnClickListener {
 //            startActivity(Intent(this, StoreListInput::class.java))
 //
@@ -113,10 +114,7 @@ class HomeActivity : AppCompatActivity() {
 
         }
 
-//        binding.userAccountBtn.setOnClickListener {
-//            startActivity(Intent(this, AccountActivity::class.java))
-//
-//        }
+
 
         binding.accountDisplayBtn.setOnClickListener {
             startActivity(Intent(this, AccountDisplayActivity::class.java))
@@ -136,16 +134,12 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
-    //uncomment this once emaiTV is impleneted into new homepage
 
     private fun checkUser() {
         //check user is logged in or not
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser != null) {
-            //user not null, user is logged in, get user info
-           // val email = firebaseUser.email
-            //set text view
-           // binding.emailTV.text = email
+
         }
         else {
             //user is null user is not logged in, go to login activity

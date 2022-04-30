@@ -35,14 +35,13 @@ class BusRegister : AppCompatActivity() {
     private var password = ""
     private var username = ""
     private var busName =""
-    //private var busAddress=""
     private var businessAddress=""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityBusRegisterBinding.inflate(layoutInflater)
         setContentView(binding.root)
-       //setContentView(R.layout.activity_bus_register)
+
         //config actionbar, enable back button
         actionBar = supportActionBar!!
         actionBar.title = "Register"
@@ -63,7 +62,7 @@ class BusRegister : AppCompatActivity() {
         binding.signUpBtn.setOnClickListener {
             //validate data
             validateData()
-            pushToDb() //this is the error
+            pushToDb()
             startActivity(Intent(this, HomeActivity::class.java))
 
         }
@@ -74,7 +73,7 @@ class BusRegister : AppCompatActivity() {
         }
     }
 
-    //maybe database code goes in here?
+
     private fun validateData() {
         //get data
         email = binding.etBusEmail2.text.toString().trim()
@@ -108,7 +107,7 @@ class BusRegister : AppCompatActivity() {
         }
     }
 
-    //probably from here i should do pushtodb
+
     private fun firebaseSignUp() {
         //show progress
         progressDialog.show()
@@ -138,13 +137,14 @@ class BusRegister : AppCompatActivity() {
             }
     }
 
-    //probbly should have the screen from here
+
     fun pushToDb() {
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
 
         val user = User(username, email, password, busName, businessAddress)
         database2.child("accounts").child(username).setValue(user) //new
 
+        //old code, success/failure listeners would throw errors for some reason
         // database2.child("accounts").child(username).setValue(user).addOnSuccessListener {
         //binding.etEmail2.text.clear()
         //  binding.etPassword2.text.clear()

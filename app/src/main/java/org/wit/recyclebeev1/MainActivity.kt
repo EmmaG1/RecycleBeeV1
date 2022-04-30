@@ -41,7 +41,6 @@ public class MainActivity : AppCompatActivity() {
     private var eircode = ""
     private var businessName = ""
     private var businessAddress = ""
-   // private var busAddress = ""
     private var businessBio = ""
 
 
@@ -51,29 +50,9 @@ public class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//-------------------
-
-       // val ref2 = datbase2.getReference("messages")
-      //  ref2.setValue("hello")
-        //var database = FirebaseDatabase.getInstance().reference
-
-//        binding.signUpBtn.setOnClickListener{
-//            var email = binding.etEmail2.text.toString()
-//            var password = binding.etEmail2.text.toString()
-//        }
-
-       // database.setValue(User(email,password))
-
-//--------------------
-
-
-        //Checkboxes
-        //val chk = findViewById<CheckBox>(R.id.userCheckBox)
-        //val chk2 = findViewById<CheckBox>(R.id.checkBox2)
 
         //config actionbar, enable back button
         actionBar = supportActionBar!!
-       // actionBar.title = "Register"
         actionBar.setDisplayHomeAsUpEnabled(true)
         actionBar.setDisplayShowHomeEnabled(true)
 
@@ -87,25 +66,12 @@ public class MainActivity : AppCompatActivity() {
         //firebase auth init
         firebaseAuth = FirebaseAuth.getInstance()
 
-        //UID
-
 
         //handle click begin reguster (this should bring to homepage)
         binding.signUpBtn.setOnClickListener {
 
-            //checkbox code?
-
-
-//            if(chk2.isChecked){
-//                validateBusData()
-//                startActivity(Intent(this,BusHomeActivity::class.java))
-//            }
-
             //validate data
             validateData()
-            //pushToDb() //this is the error
-            //startActivity(Intent(this, HomeActivity::class.java))//dont think I need this as a startactivity is in firebaseSignup()
-
         }
 
         //click SignIn Textview to bring you to login page
@@ -161,7 +127,6 @@ public class MainActivity : AppCompatActivity() {
 
                 Toast.makeText(this, "Account created with email $email", Toast.LENGTH_SHORT).show()
 
-                //checkbox if statement in here?
 
                 if(chk.isChecked){
                     pushToDb()
@@ -173,9 +138,6 @@ public class MainActivity : AppCompatActivity() {
                     startActivity(Intent(this,BusHomeActivity::class.java))
                 }
 
-                //pushToDb()
-                //open profile
-               // startActivity(Intent(this, HomeActivity::class.java))
                database.setValue(User(username, email,password, firstName, lastName, eircode)) //new details
                 finish()
 
@@ -188,7 +150,7 @@ public class MainActivity : AppCompatActivity() {
             }
     }
 
-    //
+
     fun pushToDb() {
 
         val database2 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference
@@ -196,23 +158,9 @@ public class MainActivity : AppCompatActivity() {
        //new
         uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
         val user = User(username, email, password, firstName, lastName, eircode)
-        //added '.child("USers") here
         database2.child("accounts").child("Users").child(uid).setValue(user)
 
 
-        //database2.child("accounts").child(uid).setValue(user) //new
-
-       // database2.child("accounts").child(username).setValue(user).addOnSuccessListener {
-            //binding.etEmail2.text.clear()
-          //  binding.etPassword2.text.clear()
-
-           // Toast.makeText(this, "Successfully saved", Toast.LENGTH_SHORT).show()
-
-           // startActivity(Intent(this, HomeActivity::class.java))
-
-       // }.addOnFailureListener {
-       //     Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show()
-      //  }
     }
 
     fun pushToDb2() {
@@ -221,8 +169,7 @@ public class MainActivity : AppCompatActivity() {
 
         //new
         uid = FirebaseAuth.getInstance().currentUser!!.uid.toString()
-        val user = User(username, email, password, businessName, businessAddress, businessBio) //businessAddress
-        //added '.child("USers") here
+        val user = User(username, email, password, businessName, businessAddress, businessBio)
         database2.child("accounts").child("BusinessUsers").child(uid).setValue(user)
 
 

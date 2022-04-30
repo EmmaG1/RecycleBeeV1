@@ -44,9 +44,6 @@ class LoginMainActivity : AppCompatActivity() {
         binding = ActivityLoginMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //configure actionbar
-       // actionBar = supportActionBar!!
-        //actionBar.title = "login"
 
         //config progress dialog
         progressDialog = ProgressDialog(this)
@@ -58,7 +55,7 @@ class LoginMainActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         checkUser()
 
-        //---new login page ----------
+        //---new login page - doesnt work----------
         //if user in DBref
 //        firebaseAuth = FirebaseAuth.getInstance()
 //        uid = firebaseAuth.currentUser?.uid.toString()
@@ -116,17 +113,16 @@ class LoginMainActivity : AppCompatActivity() {
                 val firebaseUser = firebaseAuth.currentUser
                 val email = firebaseUser!!.email
                 Toast.makeText(this, "Logged in as $email", Toast.LENGTH_SHORT).show()
+
+                //new loging - doesnt work
                // val dbRef = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/accounts/BusinessUsers/").reference
 
                 //userLogin()
                 //getUserData()
 
-                //old way ----
+
                 startActivity(Intent(this,HomeActivity::class.java))
                 finish()
-                //-----
-
-
 
             }
             .addOnFailureListener { e->
@@ -136,6 +132,7 @@ class LoginMainActivity : AppCompatActivity() {
             }
     }
 
+    //--------------------------new login - doesnt work
    // private fun userLogin() {
 
 
@@ -171,7 +168,9 @@ class LoginMainActivity : AppCompatActivity() {
 //            }
 //        })
 
-    //need to change this to two homepages
+    // -----end of new login -----------------
+
+
     private fun checkUser() {
         //if user is already logged in g oto profile acitivty
         //get current user
@@ -185,40 +184,6 @@ class LoginMainActivity : AppCompatActivity() {
 
     }
 
-
-
-    //private fun getUserData() {
-
-
-        //showProgressBar()
-        //database3.child(uid).addValueEventListener(object: ValueEventListener{
-        //databaseReference.child(uid).addValueEventListener(object: ValueEventListener {
-        //databaseReference.child("BusinessUser").orderByChild("email").equalTo(user.email).once("value", snapshot => {
-
-
-//            databaseReference.child("BusinessUser").addValueEventListener(object: ValueEventListener{
-//                override fun onDataChange(snapshot: DataSnapshot) {
-//                    user = snapshot.getValue(User::class.java)!!
-//                    binding.tvFullName.setText(user.firstName + " " + user.lastName)
-//                    binding.tvEircode.setText(user.eircode)
-//                    //getUserProfilePic()
-//                    //Toast.makeText(this@AccountDisplayActivity, "Successfully recieved user profile data", Toast.LENGTH_SHORT)
-//                }
-//                override fun onCancelled(error: DatabaseError) {
-//                    //hideProgressBar()
-//                    Toast.makeText(this@LoginMainActivity, "Failed to get user profile data", Toast.LENGTH_SHORT)
-//                }
-//        })
-
-
-
-   // }
-
-
-
-
-
-//}
 
 
 

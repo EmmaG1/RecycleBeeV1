@@ -42,7 +42,6 @@ class BusAccountDisplayActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
         uid = auth.currentUser?.uid.toString()
 
-        //databaseReference= FirebaseDatabase.getInstance().getReference("accounts")
         val database3 = Firebase.database("https://recyclebeev1-default-rtdb.europe-west1.firebasedatabase.app/").reference //new
         databaseReference = database3.child("accounts").child("BusinessUsers") //added users code here
         if(uid.isNotEmpty()){
@@ -61,7 +60,7 @@ class BusAccountDisplayActivity : AppCompatActivity() {
             val user = Firebase.auth.currentUser!!
             user.delete()
 
-
+// old way of deleting with success/failure listeners, for some reason this would through errors
 //            databaseReference.child(uid).removeValue().addOnSuccessListener {
 //                Toast.makeText(this, "Account deleted", Toast.LENGTH_SHORT).show()
 //                startActivity(Intent(this, LaunchActivity::class.java))
@@ -78,11 +77,6 @@ class BusAccountDisplayActivity : AppCompatActivity() {
 //                Toast.makeText(this, "Account deletion failed", Toast.LENGTH_SHORT).show()
 //            }
 
-            //put this code inside succ
-
-
-
-
         }
     }
 
@@ -90,14 +84,14 @@ class BusAccountDisplayActivity : AppCompatActivity() {
 
 
         showProgressBar()
-        //database3.child(uid).addValueEventListener(object: ValueEventListener{
+
         databaseReference.child(uid).addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 user = snapshot.getValue(User::class.java)!!
-                binding.tvBusinessName.setText(user.businessName) //firstName
-                binding.tvBusinessBio.setText(user.businessBio) //eircode
+                binding.tvBusinessName.setText(user.businessName)
+                binding.tvBusinessBio.setText(user.businessBio)
                 getUserProfilePic()
-                //Toast.makeText(this@AccountDisplayActivity, "Successfully recieved user profile data", Toast.LENGTH_SHORT)
+
             }
 
             override fun onCancelled(error: DatabaseError) {

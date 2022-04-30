@@ -16,7 +16,6 @@ class RecycleMenuActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_recycle_menu)
         setContentView(R.layout.list_item)
 
         imageId = arrayOf(

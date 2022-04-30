@@ -26,8 +26,8 @@ class BusHomeActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //config actionbar
-        actionBar = supportActionBar!! //uncomment this for old button menu
-       // actionBar.title = "Home/Profile" //and this
+        actionBar = supportActionBar!!
+
 
         //init firebase aith
         firebaseAuth = FirebaseAuth.getInstance()
@@ -42,7 +42,7 @@ class BusHomeActivity : AppCompatActivity() {
             startActivity(Intent(this, MapsActivity::class.java))
 
         }
-//old store list submission button
+// old store list submission button
 //        binding.storeListInputBtn.setOnClickListener {
 //            startActivity(Intent(this, StoreListInput::class.java))
 //
@@ -68,10 +68,7 @@ class BusHomeActivity : AppCompatActivity() {
         //check user is logged in or not
         val firebaseUser = firebaseAuth.currentUser
         if (firebaseUser != null) {
-            //user not null, user is logged in, get user info
-            //val email = firebaseUser.email
-            //set text view
-            //binding.emailTV.text = email
+
         }
         else {
             //user is null user is not logged in, go to login activity

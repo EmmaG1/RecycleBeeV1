@@ -23,8 +23,12 @@
     <string name="new12">Preparation: Ensure items are clean from any organic material like food or grease. </string>
     <string name="new2">Plastic that can be recycled: Plastic bottles, bottle tops and cartons.</string>
     <string name="new22">Preparation: Plastic items placed in your recycling bin need to be clean, dry and loose. This means there should be no food or liquids left on/in your plastic items, and you should place all the items loosely in the bin </string>
-    <string name="new3">tins</string>
-    <string name="new4">batteries</string>
-    <string name="new5">glass</string>
-    <string name="new6">textiles</string>
+    <string name="new3">Tins/Cans that can be recycled: Drink cans, aluminion foil, soup/sauce/fruit tins, food cans, biscuit tins, pet food cans, beer bottle lids. </string>
+    <string name="new32">Preparation:Empty and rinse items – left over foods or liquids can contaminate other recyclables. You can leave labels on – these are removed in the recycling process. Metal lids and caps can also be placed in the household recycling bin.</string>
+    <string name="new4">Batteries that can be recycled: Household batteries (AA, AAA, C, C, 9-volt) can be brought to battery recycling stations. Stores like Aldi and Lidl have battery recycling stations in store - Look for the blue box at tills! </string>
+    <string name="new42">Preparation:</string>
+    <string name="new5">Glass that can be recycled: All types of glass: green, clear and brown are fine to recycle</string>
+    <string name="new52">Preparation: Clean, dry and loose. Some recycling banks will require separation of clear, green and brown glass. </string>
+    <string name="new6">Donate pre-loved garments, shoes and soft furnishings to local charity shops or use the charity textile bins at bring centres and other locations.</string>
+    <string name="new62">Preparation: Some textiles are not suitable for re-use or recycling such as those that are heavily soiled or worn, these should be disposed of in a clothes bank where they will be sent for shredding and used, for instance, as furniture stuffing.</string>
 </resources>

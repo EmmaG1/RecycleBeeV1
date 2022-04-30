@@ -13,20 +13,11 @@ class LaunchActivity : AppCompatActivity() {
     //viewBinding
     private lateinit var binding: ActivityLaunchBinding
 
-    //Actionbar
-   // private lateinit var actionBar: ActionBar
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_launch)
         super.onCreate(savedInstanceState)
         binding = ActivityLaunchBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        //config actionbar
-        //actionBar = supportActionBar!!
-        //actionBar.title = "Launch Screen"
 
 
         //click userRegBtn Button to bring you to Register page
@@ -40,7 +31,7 @@ class LaunchActivity : AppCompatActivity() {
             startActivity(Intent(this, LoginMainActivity::class.java))
 
         }
-//old bus login textview box
+//old business login textview box - unused
 //        binding.busLoginTv.setOnClickListener {
 //            startActivity(Intent(this, BusRegister::class.java))
 //
